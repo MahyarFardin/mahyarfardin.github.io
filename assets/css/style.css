@@ -109,7 +109,6 @@
 /*-----------------------------------*\
   #RESET
 \*-----------------------------------*/
-
 *,
 *::before,
 *::after {
@@ -904,11 +903,11 @@ main {
 }
 
 .skills-list {
-    padding: 20px;
+    padding: 10px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     text-align: center;
-    gap: 10px;
+    gap: 5px;
 }
 
 .skills-item:not(:last-child) {
@@ -939,10 +938,6 @@ main {
     background: var(--text-gradient-yellow);
     height: 100%;
     border-radius: inherit;
-}
-
-.skill-container{
-  padding: 30px;
 }
 
 /*-----------------------------------*\
@@ -1364,7 +1359,15 @@ textarea.form-input::-webkit-resizer {
 
     .project-img,
     .blog-banner-box {
-        height: auto;
+        height: 150px;
+    }
+    
+    .skills-list {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center;
+        gap: 10px;
     }
 }
 

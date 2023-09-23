@@ -81,41 +81,39 @@ for (let i = 0; i < formInputs.length; i++) {
     });
 }
 
-// page navigation variables
-const navigationLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
-console.log(pages);
-console.log(navigationLinks);
-
-// add event to all nav link
-navigationLinks.forEach((navigationLink) => {
-    navigationLink.addEventListener("click", function () {
-        for (let i = 0; i < pages.length; i++) {
-            if (
-                this.innerHTML.toLowerCase().trim() ==
-                pages[i].dataset.page.trim()
-            ) {
-                pages[i].classList.add("active");
-                navigationLink.classList.add("active");
-                window.scrollTo(0, 0);
-            } else {
-                pages[i].classList.remove("active");
-                navigationLink.classList.remove("active");
-            }
+function activator(event) {
+    const navigationLinks = document.querySelectorAll("[data-nav-link]");
+    const pages = document.querySelectorAll("[data-page]");
+    event.classList.add("active");
+    navigationLinks.forEach((navigationLink) => {
+        if (navigationLink !== event) {
+            navigationLink.classList.remove("active");
         }
     });
-});
+    pages.forEach((page) => {
+        console.log(page.dataset.page == event.innerHTML.toLowerCase().trim());
+        if (
+            event.innerHTML.toLowerCase().trim() == page.dataset.page.trim()
+        ) {
+            page.classList.add("active")
+        }
+        else{
+            page.classList.remove("active")
+        }
+    });
+}
 
 const email_btn = document.getElementById("contact-btn");
-console.log(email_btn);
 email_btn.addEventListener("click", (event) => {
     event.preventDefault();
-    const name = document.getElementById("name").value
-    const email = document.getElementById("email").value
-    const text = document.getElementById("text").value
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const text = document.getElementById("text").value;
     console.log(text);
     console.log(email);
     console.log(text);
-    const mailtoLink = `mailto:mahyarfardinfar@gmail.com?subject=${encodeURIComponent(name)}&body=${encodeURIComponent(text)}`;
+    const mailtoLink = `mailto:mahyarfardinfar@gmail.com?subject=${encodeURIComponent(
+        name
+    )}&body=${encodeURIComponent(text)}`;
     window.location.href = mailtoLink;
 });
