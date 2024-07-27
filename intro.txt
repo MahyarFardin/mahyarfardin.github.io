@@ -1,0 +1,10 @@
+Welcome to my website! My name is Mahyar, and I am currently a computer vision researcher at the university of tabriz.
+My main focus is on Medical images right now but I am trying my best to keep up with new areas like graph neural networks
+and reinforcement learning and tools like transformers, diffusions, and few-shot learning.
+Over the past 4 years I have got the chance to work with <a>Dr. M. Zolfy</a>, <a>Dr. R. Rawwasizadeh</a>, 
+<a>Dr. A. Ghavifekr</a> and <a>Dr. M. Rezai</a>. Moreover, I had the chance to work with over 12 teams not only on AI-based projects
+but also on software projects like university sign language detection, EEG processing, music denoising, closet management system, mobile fitness app, etc.
+Thus many people might call me a full-time geek, but yet I am not a dedicated one! I also love to listen to music, watch movies, and do various sports.
+I like jug daily and play group sports like football, volleyball, basketball, and ping pong. I also find it interesting
+to study philosofy and mathematics. 
+In case you need to talk more, I would be glad to chat with you throughout the links on the left hand bar.
