@@ -1,13 +1,20 @@
 import { School, Github, Linkedin, ExternalLink, House, Brain, Binary, Origami } from "lucide-react";
 import NavItem from "./NavItem";
+import Image from "next/image";
 
 export default function Sidebar() {
   return (
     <>
     <div className="flex h-full flex-col p-4" style={{ backgroundColor: "#fafafa" }}>
       <div className="flex items-center gap-3 mb-6">
-        <img src="/three.png"
-             alt="avatar" className="h-10 w-10 rounded-full" />
+        <Image
+          src="/three.png"
+          alt="avatar"
+          width={40}
+          height={40}
+          className="rounded-full h-10 w-10"
+          priority
+        />
         <div>
           <div className="font-semibold text-sm">Mahyar Fardinfar</div>
           <div className="text-sm text-gray-500">AI Engineer</div>
