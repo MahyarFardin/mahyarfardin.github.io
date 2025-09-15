@@ -7,8 +7,8 @@ import Sidebar from "@/components/Sidebar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Onur-style Portfolio",
-  description: "Software Engineer • Writer",
+  title: "Mahyar Fardinfar",
+  description: "AI Engineer • Researcher",
 };
 
 export default function RootLayout({
@@ -20,10 +20,12 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="max-w-6xl min-h-screen"> {/* Added min-h-screen */}
-            <div className="grid grid-cols-1 h-full md:grid-cols-[280px_1fr] gap-10 md:gap-12 min-h-screen"> {/* Added min-h-screen */}
-              <Sidebar />
-              <main className="py-8 md:py-12">{children}</main>
+          <div className="w-full min-h-screen">
+            <div className="grid grid-cols-1 h-full md:grid-cols-[280px_1fr] min-h-screen">
+              <aside className="sticky top-0 h-screen">
+                <Sidebar />
+              </aside>
+              <main className="w-full">{children}</main>
             </div>
           </div>
         </ThemeProvider>
