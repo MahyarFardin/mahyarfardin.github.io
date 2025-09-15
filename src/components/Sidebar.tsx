@@ -8,7 +8,7 @@ export default function Sidebar() {
     <div className="flex h-full flex-col p-4" style={{ backgroundColor: "#fafafa" }}>
       <div className="flex items-center gap-3 mb-6">
         <Image
-          src=".z/three.png"
+          src="./three.png"
           alt="avatar"
           width={40}
           height={40}
