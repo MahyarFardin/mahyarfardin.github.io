@@ -16,7 +16,7 @@ export default function JourneyPage() {
   };
 
   return (
-    <div className="relative p-28">
+    <div className="relative px-4 sm:px-6 md:px-10 lg:px-16 xl:px-28 py-10 md:py-20">
       <div
         className="absolute top-[-40px] left-1/2 -translate-x-1/2 w-full h-[300px] pointer-events-none z-0"
         style={{
@@ -24,7 +24,7 @@ export default function JourneyPage() {
         }}
       />
       <div className="relative z-10">
-        <h1 className="text-2xl font-bold mb-4">Journey</h1>
+        <h1 className="text-2xl md:text-3xl font-bold mb-4">Journey</h1>
         <Chrono
           items={items}
           mode="VERTICAL"

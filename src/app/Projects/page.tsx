@@ -114,24 +114,24 @@ export default function ProjectsPage() {
   const categories = ["All", ...Array.from(new Set(projects.map(project => project.category)))];
 
   return (
-    <div className="relative p-28">
+    <div className="relative px-4 sm:px-6 md:px-10 lg:px-16 xl:px-28 py-10 md:py-20">
       {/* Gradient background */}
       <div className="absolute top-0 right-0 w-full h-full pointer-events-none z-0"
         style={{
-          background: "radial-gradient(circle at 100% 0%, rgba(34, 197, 94, 0.3) 0%, transparent 15%)",
+          background: "radial-gradient(circle at 100% 0%, rgba(34, 197, 94, 0.15) 0%, transparent 10%)",
         }}
       />
 
-      <h1 className="text-3xl font-bold mb-8 relative z-10">Projects</h1>
+      <h1 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 relative z-10">Projects</h1>
       
-      <p className="text-gray-600 mb-12 relative z-10 max-w-3xl">
+      <p className="text-gray-600 text-sm md:text-base mb-8 md:mb-12 relative z-10 max-w-3xl">
         A collection of my projects spanning computer vision, 
         medical AI, natural language processing, and generative models. Each project 
         represents a unique challenge and learning opportunity in the field of artificial intelligence & software engineering.
       </p>
 
       {/* Category Filter */}
-      <div className="flex flex-wrap gap-3 mb-12 relative z-10">
+      <div className="flex flex-wrap gap-3 mb-8 md:mb-12 relative z-10">
         {categories.map((category) => (
           <button
             key={category}
@@ -143,11 +143,11 @@ export default function ProjectsPage() {
       </div>
 
       {/* Projects Grid */}
-      <div className="space-y-8 relative z-10">
+      <div className="space-y-6 md:space-y-8 relative z-10">
         {projects.map((project, index) => (
-          <div key={index} className="border-l-2 border-gray-200 pl-6 pb-6">
-            <div className="flex items-start justify-between mb-3">
-              <h2 className="text-xl font-semibold text-gray-900 leading-tight pr-4">
+          <div key={index} className="border-l-2 border-gray-200 pl-4 md:pl-6 pb-6">
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 md:gap-0 mb-3">
+              <h2 className="text-base md:text-xl font-semibold text-gray-900 leading-tight pr-4">
                 {project.title}
               </h2>
               <div className="flex items-center gap-2">
@@ -168,7 +168,7 @@ export default function ProjectsPage() {
               </span>
             </div>
             
-            <p className="text-gray-600 mb-4 leading-relaxed">
+            <p className="text-gray-600 text-sm md:text-base mb-4 leading-relaxed">
               {project.description}
             </p>
             

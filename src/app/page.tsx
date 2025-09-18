@@ -3,19 +3,19 @@
 export default function HomePage() {
   const updates = [
     {
-      date: "2024-06-25",
+      date: "2025-06-25",
       description: "Started new AI research position at LIRA Lab focusing on autonomous vehicle motion planning"
     },
     {
-      date: "2024-06-01",
+      date: "2025-06-01",
       description: "Started my Master's degree at University of Bilkent"
     },
   ];
 
   return (
-    <div className="p-28">
-      <h1 className="text-xl font-bold mb-2">Brief</h1>
-      <p className="text-gray-600 mb-8 text-justify">
+    <div className="px-4 sm:px-6 md:px-10 lg:px-16 xl:px-28 py-10 md:py-20">
+      <h1 className="text-xl md:text-2xl font-bold mb-3">Brief</h1>
+      <p className="text-gray-600 text-sm md:text-base mb-8 text-justify">
         I am a computer engineer and AI researcher specializing in
         computer vision & robotics automation. My academic work has produced contributions in
         areas such as OCR preprocessing with dilated U-Nets, brain tumor
@@ -28,14 +28,14 @@ export default function HomePage() {
         enables me to bridge rigorous research with the demands of real-world
         product development.
       </p>
-      <h1 className="text-xl font-bold mb-2">Updates</h1>
-      <p className="text-gray-500 mb-8 text-sm">
+      <h1 className="text-xl md:text-2xl font-bold mb-2">Updates</h1>
+      <p className="text-gray-500 text-sm md:text-base mb-8">
         Here you may see a timeline and most updated news about my life and
         plans!
       </p>
 
-      <div className="w-full">
-        <table className="w-full border-collapse text-gray-600 font-light">
+      <div className="w-full overflow-x-auto">
+        <table className="w-full min-w-[520px] border-collapse text-gray-600 font-light">
           {/* <thead>
             <tr>
               <th className="border-b border-gray-300 px-4 py-2 text-left font-semibold">Date</th>
@@ -45,7 +45,7 @@ export default function HomePage() {
           <tbody>
             {updates.map((update, index) => (
               <tr key={index}>
-                <td className="border-t border-gray-300 px-4 py-2 text-sm text-black font-bold">
+                <td className="border-t border-gray-300 px-4 py-2 text-xs sm:text-sm text-black font-bold">
                   {update.date}
                 </td>
                 <td className="border-t border-gray-300 px-4 py-2">
