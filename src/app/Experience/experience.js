@@ -3,7 +3,7 @@ const items = [
     cardTitle: "AI Research Intern",
     cardSubtitle: "Ankara, LIRA Lab",
     cardDetailedText:
-      "Working on motion planning for autonomous vehicles using deep reinforcement learning and imitation learning techniques.",
+      "",
   },
   {
     cardTitle: "AI Engineer",

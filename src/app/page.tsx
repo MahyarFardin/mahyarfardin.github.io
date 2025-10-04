@@ -4,7 +4,7 @@ export default function HomePage() {
   const updates = [
     {
       date: "2025-06-25",
-      description: "Started new AI research position at LIRA Lab focusing on autonomous vehicle motion planning"
+      description: "Started new AI research position at LIRA Lab."
     },
     {
       date: "2025-06-01",
