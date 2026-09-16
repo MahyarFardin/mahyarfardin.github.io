@@ -1,3 +1,5 @@
+import { BookOpen } from "lucide-react";
+
 export default function PublicationsPage() {
   const publications = [
     {
@@ -26,49 +28,43 @@ export default function PublicationsPage() {
   ];
 
   return (
-    <div className="relative px-4 sm:px-6 md:px-10 lg:px-16 xl:px-28 py-10 md:py-20">
-        <div className="absolute top-0 right-0 w-full h-full pointer-events-none z-0"
-        style={{
-          background: "radial-gradient(circle at 100% 90%, rgba(168, 85, 247, 0.3) 0%, transparent 70%)",
-        }}
-      />
+    <div className="px-4 sm:px-6 md:px-10 lg:px-16 xl:px-28 py-10 md:py-20">
+      <h1 className="flex items-center gap-2 font-serif text-2xl md:text-3xl font-bold mb-2 text-neutral-900">
+        <BookOpen size={24} style={{ color: "var(--accent-publications)" }} />
+        Publications
+      </h1>
+      <div className="mb-6 h-[3px] w-10 rounded-full" style={{ backgroundColor: "var(--accent-publications)" }} />
 
-      <h1 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 relative z-10">Publications</h1>
-      
-      <div className="space-y-6 md:space-y-8 relative z-10">
+      <div className="space-y-6 md:space-y-8">
         {publications.map((pub, index) => (
-          <div key={index} className="border-l-2 border-gray-200 pl-4 md:pl-6 pb-6">
+          <div key={index} className="border-l-2 border-neutral-200 pl-4 md:pl-6 pb-6">
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 md:gap-0 mb-2">
-              <h2 className="text-base md:text-lg font-semibold text-gray-900 leading-tight pr-4">
+              <h2 className="font-serif text-base md:text-lg font-semibold text-neutral-900 leading-tight pr-4">
                 {pub.title}
               </h2>
-              <span className={`self-start sm:self-auto inline-flex text-xs px-2 py-1 rounded-full whitespace-nowrap ${
-                pub.status === 'Published' 
-                  ? 'bg-green-100 text-green-800' 
-                  : 'bg-yellow-100 text-yellow-800'
-              }`}>
+              <span className="self-start sm:self-auto inline-flex text-xs px-2 py-1 rounded-full whitespace-nowrap border border-neutral-300 text-neutral-600">
                 {pub.status}
               </span>
             </div>
-            
-            <p className="text-sm md:text-base text-gray-600 mb-2">
+
+            <p className="text-sm md:text-base text-neutral-600 mb-2">
               {pub.authors}
             </p>
-            
-            <p className="text-sm md:text-base text-gray-700 mb-3">
+
+            <p className="text-sm md:text-base text-neutral-700 mb-3">
               <span className="font-medium">{pub.venue}</span> • {pub.year}
             </p>
-            
-            <p className="text-sm md:text-base text-gray-600 mb-4 leading-relaxed">
+
+            <p className="text-sm md:text-base text-neutral-600 mb-4 leading-relaxed">
               {pub.abstract}
             </p>
-            
+
             <div className="flex flex-wrap gap-3">
               {Object.entries(pub.links).map(([type, url]) => (
                 <a
                   key={type}
                   href={url}
-                  className="text-xs text-blue-600 hover:text-blue-800 underline"
+                  className="text-xs text-[#1d3557] hover:text-neutral-900 underline"
                 >
                   {type.charAt(0).toUpperCase() + type.slice(1)}
                 </a>
