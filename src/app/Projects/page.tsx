@@ -1,5 +1,44 @@
+"use client";
+
+import { useState } from "react";
+import clsx from "clsx";
+import { FolderGit2 } from "lucide-react";
+
 export default function ProjectsPage() {
   const projects = [
+    {
+      title: "Voxel Manipulation Pipeline",
+      description: "A robotics pipeline for generating cluttered tabletop scenes, segmenting objects with SAM3, reconstructing point clouds, and generating grasps for robotic manipulation.",
+      technologies: ["Python", "Robotics", "Point Clouds", "SAM3", "Grasp Generation"],
+      status: "In Progress",
+      year: "2026",
+      links: {
+        github: "https://github.com/MahyarFardin/Voxel_manipulation",
+      },
+      category: "Robotics"
+    },
+    {
+      title: "Learning-Free Visual Servoing",
+      description: "A modular classical computer-vision pipeline for tracking fast-moving objects (e.g. projectile motion) using background subtraction, pyramidal Lucas-Kanade optical flow, and a Kalman filter — no deep learning required.",
+      technologies: ["Python", "Computer Vision", "Optical Flow", "Kalman Filter", "MATLAB"],
+      status: "Completed",
+      year: "2025",
+      links: {
+        github: "https://github.com/MahyarFardin/Learning-free_Visual_Survoying",
+      },
+      category: "Computer Vision"
+    },
+    {
+      title: "Decoder-Only Code Completion",
+      description: "Transformer-based decoder-only code completion model trained on the py150 Python dataset, using causal self-attention to predict the next token in a code sequence.",
+      technologies: ["Python", "PyTorch", "Transformers", "NLP"],
+      status: "Completed",
+      year: "2025",
+      links: {
+        github: "https://github.com/MahyarFardin/Decoder_only_Code_Completion",
+      },
+      category: "Natural Language Processing"
+    },
     {
       title: "Maze Problem RL Solutions",
       description: "Implementation of reinforcement learning solutions for maze path-finding problems; experimenting with different RL algorithms to solve maze navigation tasks.",
@@ -113,82 +152,90 @@ export default function ProjectsPage() {
   // Extract unique categories from projects
   const categories = ["All", ...Array.from(new Set(projects.map(project => project.category)))];
 
-  return (
-    <div className="relative px-4 sm:px-6 md:px-10 lg:px-16 xl:px-28 py-10 md:py-20">
-      {/* Gradient background */}
-      <div className="absolute top-0 right-0 w-full h-full pointer-events-none z-0"
-        style={{
-          background: "radial-gradient(circle at 100% 0%, rgba(34, 197, 94, 0.15) 0%, transparent 10%)",
-        }}
-      />
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const filteredProjects = selectedCategory === "All"
+    ? projects
+    : projects.filter((project) => project.category === selectedCategory);
 
-      <h1 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 relative z-10">Projects</h1>
-      
-      <p className="text-gray-600 text-sm md:text-base mb-8 md:mb-12 relative z-10 max-w-3xl">
-        A collection of my projects spanning computer vision, 
-        medical AI, natural language processing, and generative models. Each project 
+  return (
+    <div className="px-4 sm:px-6 md:px-10 lg:px-16 xl:px-28 py-10 md:py-20">
+      <h1 className="flex items-center gap-2 font-serif text-2xl md:text-3xl font-bold mb-2 text-neutral-900">
+        <FolderGit2 size={24} style={{ color: "var(--accent-projects)" }} />
+        Projects
+      </h1>
+      <div className="mb-6 h-[3px] w-10 rounded-full" style={{ backgroundColor: "var(--accent-projects)" }} />
+
+      <p className="text-neutral-600 text-sm md:text-base mb-8 md:mb-12 max-w-3xl">
+        A collection of my projects spanning computer vision,
+        medical AI, natural language processing, and generative models. Each project
         represents a unique challenge and learning opportunity in the field of artificial intelligence & software engineering.
       </p>
 
       {/* Category Filter */}
-      <div className="flex flex-wrap gap-3 mb-8 md:mb-12 relative z-10">
-        {categories.map((category) => (
-          <button
-            key={category}
-            className="px-4 py-2 text-sm border border-gray-300 rounded-full hover:bg-gray-50 transition-colors"
-          >
-            {category}
-          </button>
-        ))}
+      <div className="flex flex-wrap gap-3 mb-8 md:mb-12">
+        {categories.map((category) => {
+          const active = category === selectedCategory;
+          return (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={clsx(
+                "px-4 py-2 text-sm border rounded-full transition-colors",
+                active
+                  ? "font-semibold"
+                  : "border-neutral-300 text-neutral-700 hover:bg-neutral-50"
+              )}
+              style={active ? { borderColor: "var(--accent-projects)", color: "var(--accent-projects)" } : undefined}
+            >
+              {category}
+            </button>
+          );
+        })}
       </div>
 
       {/* Projects Grid */}
-      <div className="space-y-6 md:space-y-8 relative z-10">
-        {projects.map((project, index) => (
-          <div key={index} className="border-l-2 border-gray-200 pl-4 md:pl-6 pb-6">
+      <div className="space-y-6 md:space-y-8">
+        {filteredProjects.map((project, index) => (
+          <div key={index} className="border-l-2 border-neutral-200 pl-4 md:pl-6 pb-6">
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 md:gap-0 mb-3">
-              <h2 className="text-base md:text-xl font-semibold text-gray-900 leading-tight pr-4">
+              <h2 className="font-serif text-base md:text-xl font-semibold text-neutral-900 leading-tight pr-4">
                 {project.title}
               </h2>
               <div className="flex items-center gap-2">
-                <span className={`text-xs px-2 py-1 rounded-full ${
-                  project.status === 'Completed' 
-                    ? 'bg-green-100 text-green-800' 
-                    : 'bg-yellow-100 text-yellow-800'
-                }`}>
+                <span className="text-xs px-2 py-1 rounded-full border border-neutral-300 text-neutral-600">
                   {project.status}
                 </span>
-                <span className="text-xs text-gray-500">{project.year}</span>
+                <span className="text-xs text-neutral-500">{project.year}</span>
               </div>
             </div>
-            
+
             <div className="flex items-center gap-2 mb-3">
-              <span className="text-sm font-medium text-purple-600 bg-purple-50 px-2 py-1 rounded">
+              <span className="text-sm font-medium text-neutral-500 border border-neutral-200 px-2 py-1 rounded">
                 {project.category}
               </span>
             </div>
-            
-            <p className="text-gray-600 text-sm md:text-base mb-4 leading-relaxed">
+
+            <p className="text-neutral-600 text-sm md:text-base mb-4 leading-relaxed">
               {project.description}
             </p>
-            
+
             <div className="flex flex-wrap gap-2 mb-4">
               {project.technologies.map((tech, techIndex) => (
                 <span
                   key={techIndex}
-                  className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded"
+                  className="text-xs bg-neutral-100 text-neutral-700 px-2 py-1 rounded"
                 >
                   {tech}
                 </span>
               ))}
             </div>
-            
+
             <div className="flex flex-wrap gap-3">
               {Object.entries(project.links).map(([type, url]) => (
                 <a
                   key={type}
                   href={url}
-                  className="text-sm text-blue-600 hover:text-blue-800 underline"
+                  className="text-sm text-[#1d3557] hover:text-neutral-900 underline"
                 >
                   {type.charAt(0).toUpperCase() + type.slice(1)}
                 </a>
