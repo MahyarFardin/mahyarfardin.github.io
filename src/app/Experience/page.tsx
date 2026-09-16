@@ -3,7 +3,7 @@ import items from "./experience";
 
 export default function JourneyPage() {
   return (
-    <div className="px-4 sm:px-6 md:px-10 lg:px-16 xl:px-28 py-10 md:py-20">
+    <div className="px-6 sm:px-8 md:px-10 lg:px-16 xl:px-28 py-10 md:py-20">
       <h1 className="flex items-center gap-2 font-serif text-2xl md:text-3xl font-bold mb-2 text-neutral-900">
         <Milestone size={24} style={{ color: "var(--accent-experience)" }} />
         Journey

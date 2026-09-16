@@ -24,7 +24,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="w-full min-h-screen">
             {/* Mobile header */}
-            <header className="md:hidden sticky top-0 z-20 flex items-center justify-between px-4 py-3 border-b border-neutral-200 bg-white/80 backdrop-blur">
+            <header className="md:hidden sticky top-0 z-20 flex items-center justify-between px-6 py-3 border-b border-neutral-200 bg-white/80 backdrop-blur">
               <MobileSidebar />
               <div className="font-serif font-semibold text-neutral-900">Mahyar Fardinfar</div>
               <div className="w-9" />

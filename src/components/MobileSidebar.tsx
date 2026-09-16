@@ -35,7 +35,7 @@ export default function MobileSidebar() {
             onClick={() => setIsOpen(false)}
           />
           <div className="fixed inset-y-0 left-0 z-40 w-72 max-w-[80vw] bg-neutral-50 shadow-xl transition-transform">
-            <div className="flex items-center justify-between px-4 py-3 border-b border-neutral-200">
+            <div className="flex items-center justify-between px-6 py-3 border-b border-neutral-200">
               <div className="font-serif font-semibold text-neutral-900">Menu</div>
               <button
                 aria-label="Close menu"
