@@ -5,10 +5,20 @@
   @apply leading-relaxed;
 }
 
+.font-serif {
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+}
+
 /* Theme variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Accent palette: base navy + per-section tints */
+  --accent-base: #1d3557;
+  --accent-experience: #2f5d80;
+  --accent-publications: #1f5c56;
+  --accent-projects: #3d3f7a;
 }
 
 body {

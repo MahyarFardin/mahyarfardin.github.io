@@ -8,12 +8,12 @@ import { ReactNode } from "react";
 export default function NavItem({
   href,
   label,
-  badge,
+  accent,
   icon,
 }: {
   href: string;
   label: string;
-  badge?: number | string;
+  accent?: string;
   icon?: ReactNode;
 }) {
   const pathname = usePathname();
@@ -26,29 +26,13 @@ export default function NavItem({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={clsx(
-          "flex text-sm font-semibold items-center justify-between rounded-xl px-3 py-2",
-        )}
+        className="flex items-center justify-between px-3 py-1.5 text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
       >
-        <div className="flex items-center gap-2">
+        <span className="flex items-center gap-2">
           {icon}
           <span>{label}</span>
-        </div>
-{badge !== undefined && (
-  <span
-    className={clsx(
-      "ml-3 inline-flex h-5 w-5 items-center justify-center rounded-sm text-xs font-semibold",
-    )}
-    style={{
-      minWidth: "1.25rem",
-      backgroundColor: "#f3f4f6",
-      color: "#000",
-      border: "1px solid #e5e7eb"
-    }}
-  >
-    {badge}
-  </span>
-)}
+        </span>
+        <span className="text-xs text-neutral-400">&#8599;</span>
       </a>
     );
   }
@@ -57,29 +41,15 @@ export default function NavItem({
     <Link
       href={href}
       className={clsx(
-        "flex text-sm font-semibold items-center justify-between rounded-xl px-3 py-2",
-        active && "bg-gray-900 text-white dark:bg-gray-100 dark:text-black"
+        "flex items-center gap-2 border-l-2 px-3 py-1.5 text-sm transition-colors",
+        active
+          ? "font-semibold"
+          : "border-transparent text-neutral-600 hover:text-neutral-900"
       )}
+      style={active ? { borderLeftColor: accent, color: accent } : undefined}
     >
-      <div className="flex items-center gap-2">
-        {icon}
-        <span>{label}</span>
-      </div>
-{badge !== undefined && (
-  <span
-    className={clsx(
-      "ml-3 inline-flex h-5 w-5 items-center justify-center rounded-sm text-xs font-semibold",
-    )}
-    style={{
-      minWidth: "1.25rem",
-      backgroundColor: "#f3f4f6",
-      color: "#000",
-      border: "1px solid #e5e7eb"
-    }}
-  >
-    {badge}
-  </span>
-)}
+      {icon}
+      <span>{label}</span>
     </Link>
   );
 }
