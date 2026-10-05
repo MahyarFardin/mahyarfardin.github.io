@@ -1,4 +1,4 @@
-import { House, Milestone, BookOpen, FolderGit2, School, Github, Linkedin, ExternalLink } from "lucide-react";
+import { House, Milestone, BookOpen, FolderGit2, CalendarDays, School, Github, Linkedin, ExternalLink } from "lucide-react";
 import NavItem from "./NavItem";
 import Image from "next/image";
 
@@ -27,6 +27,7 @@ export default function Sidebar() {
         <NavItem href="/Experience" label="Experience" accent="var(--accent-experience)" icon={<Milestone size={16} />} />
         <NavItem href="/Publications" label="Publications" accent="var(--accent-publications)" icon={<BookOpen size={16} />} />
         <NavItem href="/Projects" label="Projects" accent="var(--accent-projects)" icon={<FolderGit2 size={16} />} />
+        <NavItem href="/Calendar" label="Calendar" accent="var(--accent-calendar)" icon={<CalendarDays size={16} />} />
       </nav>
 
       <div className="mt-10 text-xs font-medium uppercase tracking-wide text-neutral-400">
