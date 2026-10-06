@@ -1,6 +1,6 @@
 import { CalendarDays } from "lucide-react";
 
-const CALENDAR_ID = "mahyarfardinfar@gmail.com";
+const CALENDAR_ID = "81f99f28b34eedac95df12de0d4f2471a782571f5a357ed714818ff8b55dd7e1@group.calendar.google.com";
 const EMBED_SRC = `https://calendar.google.com/calendar/embed?src=${encodeURIComponent(
   CALENDAR_ID
 )}&mode=WEEK&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&showNav=1`;
@@ -29,7 +29,7 @@ export default function CalendarPage() {
       </div>
 
       <a
-        href={`https://calendar.google.com/calendar/u/0?cid=${btoa(CALENDAR_ID)}`}
+        href="https://calendar.google.com/calendar/u/0?cid=ODFmOTlmMjhiMzRlZWRhYzk1ZGYxMmRlMGQ0ZjI0NzFhNzgyNTcxZjVhMzU3ZWQ3MTQ4MThmZjhiNTVkZDdlMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t"
         target="_blank"
         rel="noopener noreferrer"
         className="mt-4 inline-block text-xs text-[#1d3557] hover:text-neutral-900 underline"
