@@ -3,18 +3,27 @@
 import { House } from "lucide-react";
 
 export default function HomePage() {
+  
   const updates = [
     {
+      date: "2026-11",
+      description: "Will join the presentation \"MASTER & PHD TALKS!\" for experience sharing and networking"
+    },
+    {
+      date: "2026-10",
+      description: "Submitted \"P3: Persistent Particle Planning for Constrained Diffusion Control\" to ICLR 2027"
+    },
+    {
       date: "2026-02",
-      description: "Joined TUBITAK Sayem Yesil project related to intelligent farming"
+      description: "Joined TUBITAK Sayem Yesil project on intelligent farming"
     },
     {
       date: "2025-06",
-      description: "Started new AI research position at LIRA Lab."
+      description: "Started robotics research at LIRA Lab."
     },
     {
       date: "2025-06",
-      description: "Started my Master's degree at University of Bilkent"
+      description: "Started Master's at Bilkent"
     },
   ];
 

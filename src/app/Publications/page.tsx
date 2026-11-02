@@ -3,6 +3,18 @@ import { BookOpen } from "lucide-react";
 export default function PublicationsPage() {
   const publications = [
     {
+      title: "P3: Persistent Particle Planning for Constrained Diffusion Control",
+      authors: "Hikmet Simsir, Mahyar Fardinfar, Ozgur S. Oguz",
+      venue: "International Conference on Learning Representations (ICLR 2027)",
+      year: "2027",
+      status: "Under Review",
+      abstract: "We introduce Persistent Particle Planning (P3), a sequential Monte Carlo framework for diffusion control that maintains a weighted population of candidate plans across replanning steps.",
+      links: {
+        paper: "https://arxiv.org/abs/2610.06002",
+        code: "https://github.com/p3-username/p3-anon"
+      }
+    },
+    {
       title: "UDiNet: A dilated U-net for improving OCR performance",
       authors: "Mahyar Fardinfar, Pouya Rashidikia, Mina Zolfy",
       venue: "International Conference on Industrial Engineering and Operations Management (IEOM 2024)",
